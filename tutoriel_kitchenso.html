@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriel KitchenOS - Guide Complet pour Débutants</title>
+    <meta name="description" content="Apprenez à utiliser KitchenOS : créer des recettes, planifier vos repas, gérer vos courses et utiliser les outils cuisine. Guide étape par étape.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z'/><line x1='6' y1='17' x2='18' y2='17'/></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f8fafc; }
+        .step { background-color: #ffffff; border-left: 4px solid #0f172a; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .step-number { background-color: #0f172a; color: white; border-radius: 50%; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 0.5rem; }
+        .feature-icon { background-color: #0f172a; border-radius: 50%; padding: 0.5rem; display: inline-flex; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body class="text-slate-900 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+                        <line x1="6" y1="17" x2="18" y2="17"/>
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-bold">TUTORIEL <span class="font-light">KITCHENOS</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#recettes" class="text-slate-600 hover:text-slate-900">Recettes</a>
+                <a href="#planning" class="text-slate-600 hover:text-slate-900">Planning</a>
+                <a href="#courses" class="text-slate-600 hover:text-slate-900">Courses</a>
+                <a href="#outils" class="text-slate-600 hover:text-slate-900">Outils</a>
+            </nav>
+            <a href="kitchenosapp.html" class="bg-slate-900 text-white px-4 py-2 rounded-lg font-bold hover:bg-slate-800 transition-colors">Ouvrir KitchenOS</a>
+        </div>
+    </header>
+
+    <!-- Introduction -->
+    <section class="py-16 px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-slate-900 mb-6">Bienvenue dans le Tutoriel KitchenOS</h2>
+            <p class="text-xl text-slate-600 mb-8">
+                Ce guide vous accompagnera pas à pas pour maîtriser toutes les fonctionnalités de KitchenOS, 
+                votre assistant cuisine gratuit et open source.
+            </p>
+            <div class="bg-white p-6 rounded-xl shadow-sm border">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="feature-icon mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+                            <line x1="6" y1="17" x2="18" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold">Prêt à commencer ?</h3>
+                </div>
+                <p class="text-slate-600 mb-4">
+                    Ouvrez <a href="kitchenosapp.html" class="text-slate-900 font-bold underline">KitchenOS</a> 
+                    dans votre navigateur et suivez ce tutoriel en parallèle.
+                </p>
+                <p class="text-sm text-slate-500">Toutes vos données sont sauvegardées localement sur votre appareil.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Recettes -->
+    <section id="recettes" class="py-16 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center">1. Gestion des Recettes</h3>
+            <p class="text-lg text-slate-600 mb-8 text-center">
+                Créez, modifiez et organisez vos recettes personnelles.
+            </p>
+            
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">1</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Accéder à l'onglet Recettes</h4>
+                        <p class="text-slate-600">Cliquez sur "Recettes" en bas de l'écran pour voir la liste de vos recettes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">2</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Créer une nouvelle recette</h4>
+                        <p class="text-slate-600 mb-2">Appuyez sur le bouton "+" en haut à droite.</p>
+                        <p class="text-slate-600">Remplissez :</p>
+                        <ul class="list-disc list-inside text-slate-600 ml-4">
+                            <li><strong>Titre</strong> : Nom de la recette</li>
+                            <li><strong>Prépa</strong> : Temps de préparation (minutes)</li>
+                            <li><strong>Cuisson</strong> : Temps de cuisson (minutes)</li>
+                            <li><strong>Ingrédients</strong> : Liste séparée par des virgules</li>
+                            <li><strong>Étapes</strong> : Instructions détaillées</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">3</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Rechercher une recette</h4>
+                        <p class="text-slate-600">Utilisez la barre de recherche en haut pour filtrer vos recettes par nom.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">4</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Voir et modifier une recette</h4>
+                        <p class="text-slate-600">Cliquez sur une recette pour la consulter. Appuyez sur le crayon pour l'éditer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 p-4 rounded-lg mt-8">
+                <p class="text-sm text-slate-600">
+                    <strong>Astuce :</strong> KitchenOS inclut déjà 10 recettes de base pour vous inspirer !
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Planning -->
+    <section id="planning" class="py-16 px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center">2. Planification des Repas</h3>
+            <p class="text-lg text-slate-600 mb-8 text-center">
+                Organisez vos repas sur 15 jours à l'avance.
+            </p>
+            
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">1</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Accéder au Planning</h4>
+                        <p class="text-slate-600">Cliquez sur "Planning" dans le menu du bas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">2</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Assigner une recette à un jour</h4>
+                        <p class="text-slate-600">Pour chaque jour, cliquez sur le menu déroulant et sélectionnez une recette.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">3</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Générer la liste de courses</h4>
+                        <p class="text-slate-600">Une fois votre planning rempli, appuyez sur "Générer Liste" pour créer automatiquement votre liste de courses.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg mt-8 border">
+                <p class="text-sm text-slate-600">
+                    <strong>Note :</strong> Les jours de week-end sont surlignés pour une meilleure visibilité.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Courses -->
+    <section id="courses" class="py-16 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center">3. Gestion des Courses</h3>
+            <p class="text-lg text-slate-600 mb-8 text-center">
+                Gérez efficacement votre liste de courses.
+            </p>
+            
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">1</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Accéder aux Courses</h4>
+                        <p class="text-slate-600">Cliquez sur "Courses" dans le menu du bas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">2</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Ajouter un article manuellement</h4>
+                        <p class="text-slate-600">Tapez le nom de l'article dans le champ "Ajouter..." et appuyez sur le bouton "+".</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">3</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Gérer les quantités</h4>
+                        <p class="text-slate-600">Pour chaque article, utilisez les boutons "+" et "-" pour ajuster la quantité.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">4</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Cocher et nettoyer</h4>
+                        <p class="text-slate-600">Cochez les articles achetés. Appuyez sur "NETTOYER" pour supprimer tous les articles cochés.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 p-4 rounded-lg mt-8">
+                <p class="text-sm text-slate-600">
+                    <strong>Astuce :</strong> La liste se génère automatiquement depuis votre planning, mais vous pouvez l'ajuster manuellement !
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Outils -->
+    <section id="outils" class="py-16 px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-8 text-center">4. Outils Cuisine</h3>
+            <p class="text-lg text-slate-600 mb-8 text-center">
+                Découvrez les outils pratiques pour cuisiner comme un pro.
+            </p>
+            
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">1</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Minuteur intelligent</h4>
+                        <p class="text-slate-600">Cliquez sur "Outils" puis utilisez le minuteur. Ajoutez du temps avec les boutons rapides (+1m, +5m, +10m).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">2</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Convertisseur Air Fryer</h4>
+                        <p class="text-slate-600">Entrez la température et le temps du four traditionnel. L'app calcule automatiquement pour l'air fryer (température -20°C, temps x0.8).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="flex items-start">
+                    <span class="step-number">3</span>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Substitutions d'ingrédients</h4>
+                        <p class="text-slate-600">Recherchez un ingrédient (ex: "beurre") pour voir les alternatives possibles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg mt-8 border">
+                <p class="text-sm text-slate-600">
+                    <strong>Bonus :</strong> Le minuteur apparaît dans l'en-tête quand il est actif, même si vous êtes sur un autre onglet !
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="py-16 px-6 bg-slate-900 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-6">Vous êtes prêt !</h3>
+            <p class="text-xl text-slate-300 mb-8">
+                Vous maîtrisez maintenant toutes les fonctionnalités de KitchenOS. 
+                Commencez à organiser votre cuisine et économisez du temps !
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="kitchenosapp.html" class="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-colors">
+                    Ouvrir KitchenOS
+                </a>
+                <a href="#recettes" class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-slate-900 transition-colors">
+                    Revoir le Tutoriel
+                </a>
+            </div>
+            <p class="text-sm text-slate-400 mt-4">Questions ? Le code source sera bientôt disponible sur GitHub.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 px-6 border-t">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-slate-600">&copy; 2025 KitchenOS. Tutoriel officiel.</p>
+            <p class="text-sm text-slate-400 mt-2">Construit avec ❤️ pour les passionnés de cuisine.</p>
+        </div>
+    </footer>
+</body>
+</html>

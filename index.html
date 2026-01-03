@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KitchenOS - Votre Assistant Cuisine Ultime</title>
+    <meta name="description" content="KitchenOS : Gérez vos recettes, planifiez vos repas, faites vos courses et utilisez des outils cuisine gratuitement. Open source et sans installation.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z'/><line x1='6' y1='17' x2='18' y2='17'/></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f8fafc; }
+        .hero-bg { background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%); }
+        .feature-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="text-slate-900 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+                        <line x1="6" y1="17" x2="18" y2="17"/>
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-bold">KITCHEN<span class="font-light">OS</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#features" class="text-slate-600 hover:text-slate-900">Fonctionnalités</a>
+                <a href="#about" class="text-slate-600 hover:text-slate-900">À propos</a>
+                <a href="tutoriel_kitchenso.html" class="text-slate-600 hover:text-slate-900">Tutoriel</a>
+                <a href="#download" class="text-slate-600 hover:text-slate-900">Utiliser</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-bold text-slate-900 mb-6">Votre Assistant Cuisine Ultime</h2>
+            <p class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+                Gérez vos recettes, planifiez vos repas, faites vos courses et utilisez des outils cuisine intelligents. 
+                Tout en un, gratuitement et sans installation.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="kitchenosapp.html" class="bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-colors">
+                    Ouvrir KitchenOS
+                </a>
+                <a href="tutoriel_kitchenso.html" class="border-2 border-slate-900 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-colors">
+                    Tutoriel Complet
+                </a>
+            </div>
+            <p class="text-sm text-slate-500 mt-4">✓ Gratuit ✓ Open Source ✓ Fonctionne partout</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-center mb-12">Fonctionnalités Puissantes</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Recettes -->
+                <div class="feature-card bg-slate-50 p-6 rounded-xl border border-slate-200 text-center">
+                    <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+                            <line x1="6" y1="17" x2="18" y2="17"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Recettes Personnalisées</h4>
+                    <p class="text-slate-600">Créez, modifiez et organisez vos recettes avec temps de préparation, ingrédients et étapes détaillées.</p>
+                </div>
+
+                <!-- Planning -->
+                <div class="feature-card bg-slate-50 p-6 rounded-xl border border-slate-200 text-center">
+                    <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Planning 15 Jours</h4>
+                    <p class="text-slate-600">Planifiez vos repas sur 2 semaines, assignez des recettes et générez automatiquement vos listes de courses.</p>
+                </div>
+
+                <!-- Courses -->
+                <div class="feature-card bg-slate-50 p-6 rounded-xl border border-slate-200 text-center">
+                    <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Liste de Courses</h4>
+                    <p class="text-slate-600">Gérez vos courses avec quantités, cochez les articles achetés et nettoyez automatiquement la liste.</p>
+                </div>
+
+                <!-- Outils -->
+                <div class="feature-card bg-slate-50 p-6 rounded-xl border border-slate-200 text-center">
+                    <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                            <path d="M7 2v20"/>
+                            <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Outils Cuisine</h4>
+                    <p class="text-slate-600">Minuteur intelligent, convertisseur Air Fryer, substitutions d'ingrédients et calculateur de portions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-8">Pourquoi KitchenOS ?</h3>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h4 class="font-bold text-xl mb-4 text-green-600">100% Gratuit</h4>
+                    <p class="text-slate-600">Aucune publicité, aucun abonnement. KitchenOS est entièrement gratuit et le restera toujours.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h4 class="font-bold text-xl mb-4 text-blue-600">Open Source</h4>
+                    <p class="text-slate-600">Le code est ouvert sur GitHub. Contribuez, améliorez ou adaptez selon vos besoins.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h4 class="font-bold text-xl mb-4 text-purple-600">Sans Installation</h4>
+                    <p class="text-slate-600">Fonctionne directement dans votre navigateur sur mobile, tablette ou ordinateur.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h4 class="font-bold text-xl mb-4 text-orange-600">Données Locales</h4>
+                    <p class="text-slate-600">Vos recettes et données restent sur votre appareil. Pas de cloud, pas de compte requis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section id="download" class="py-20 px-6 bg-slate-900 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-6">Prêt à Cuisiner ?</h3>
+            <p class="text-xl text-slate-300 mb-8">Utilisez KitchenOS et commencez à organiser votre cuisine dès maintenant.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="kitchenosapp.html" class="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-colors">
+                    Ouvrir l'Application
+                </a>
+                <a href="tutoriel_kitchenso.html" class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-slate-900 transition-colors">
+                    Découvrir le Tutoriel
+                </a>
+            </div>
+            <p class="text-sm text-slate-400 mt-4">Compatible Chrome, Firefox, Safari et Edge</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 px-6 border-t">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-slate-600">&copy; 2025 KitchenOS. Projet open source sous licence MIT.</p>
+            <p class="text-sm text-slate-400 mt-2">Construit avec React et Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>
